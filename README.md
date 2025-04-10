@@ -18,7 +18,7 @@
 1. **Клонирование репозитория:**
 
    ```bash
-   git clone tfidf_project
+   git clone https://github.com/royalistofficial/tfidf_project.git
    cd tfidf_project
    ```
 
