@@ -1,0 +1,4 @@
+__pycache__/
+db.sqlite3
+0001_initial.py
+app.log

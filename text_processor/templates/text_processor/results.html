@@ -1,0 +1,39 @@
+{% extends 'text_processor/base.html' %}
+
+{% block title %}Результаты анализа{% endblock %}
+
+{% block content %}
+    <h2>Результаты TF/IDF анализа</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Документ</th>
+                <th>TF</th>
+                <th>IDF</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result.document }}</td>
+                        <td>
+                            <ul>
+                                {% for word, value in result.tf.items %}
+                                    <li>{{ word }}: {{ value }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                {% for word, value in result.idf.items %}
+                                    <li>{{ word }}: {{ value }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+
+    <p><a href="{% url 'text_processor:upload' %}">Анализировать другой файл</a></p>
+{% endblock %}

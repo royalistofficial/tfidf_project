@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TF/IDF Проект{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>TF/IDF Проект</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'text_processor:home' %}">Главная</a></li>
+                <li><a href="{% url 'text_processor:upload' %}">Загрузка файла</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>
